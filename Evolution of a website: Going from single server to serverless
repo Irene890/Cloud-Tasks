@@ -1,0 +1,26 @@
+SCENARIO
+An ice cream business starts to gain popularity among the locals and flavors start to sell out before the day is up. 
+The business owners asks the Solutions Architect to migrate to a server where they can have you push updates.
+They decide to migrate their static site to Amazon Elastic Compute Cloud (EC2) with a Linux, Apache, MySQL, PHP (LAMP) stack built on it.
+This will allow the website to update and react dynamically. 
+Demand for the ice cream surges after a viral video and the infrastructure and maintenance becomes difficult to manage. 
+To scale with demand, the solutions architect suggests migrating sections of their LAMP stack to serverless services, starting with the MySQL database. 
+The MySQL database will be replaced with Amazon DynamoDB serverless database.
+
+LAB OJECTIVES
+a) Upload files to Amazon S3 to host a static website.
+b) Migrate the dynamic website hosted on EC2 from using a MySQL database to using Amazon DynamoDB.
+- The Operating System (OS) for this Amazon EC2 instance is Linux, the HTTP server is Apache, the MySQL database is MariaDB, and the scripting language used is PHP. 
+All of these configured together, run the dynamic website. 
+A dynamic site is information or web pages that are generated in real time. 
+With a LAMP stack, customers will be able to input orders, and submit them.
+c) Update the DynamoDB table with a new ice cream flavor. (Update dynamic website to a serverless solution using DynamoDB for the MySQL database. 
+DynamoDB can scale with the demands of customer web traffic to ensure customers continue to reach the Ice Cream website without interruptions.)
+d) Refresh the website to reveal the new ice cream flavor.
+
+APPLICATION ARCHITECTURE
+The application architecture uses the following services:
+-Static site: Amazon S3 which contains HTML, CSS, and images.
+-Dynamic site: Amazon EC2 Linux, Apache web server, MySQL database, and PHP (LAMP) stack will come pre installed. 
+This will allow the owner or developer to update the flavors available for the day.
+-Serverless: Amazon DynamoDB. This will replace the MySQL database and make the database portion serverless.

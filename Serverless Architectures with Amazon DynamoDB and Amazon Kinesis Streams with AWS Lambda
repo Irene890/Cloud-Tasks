@@ -1,0 +1,65 @@
+1) Create a Lambda function from a blueprint, create an Amazon Kinesis Stream, then trigger the function with data from your stream and monitor the process with Amazon CloudWatch.
+2) Learn basics of event-driven programming using Amazon DynamoDB, DynamoDB Streams, and AWS Lambda. 
+Learn the process of building a real-world application using triggers that combine DynamoDB Streams and Lambda.
+
+OBJECTIVES
+a) Create an AWS Lambda function from a blueprint
+b) Create an Amazon Kinesis Stream
+c) Use Amazon CloudWatch to monitor Kinesis event data triggering your Lambda function
+d) Create an Amazon DynamoDB table and insert items
+e) Enable the Amazon DynamoDB Streams feature
+f) Configure and troubleshoot Lambda functions
+
+
+AWS LAMBDA
+Lambda is a compute service that provides resizable compute capacity in the cloud to make web-scale computing easier for developers. 
+You can upload your code to AWS Lambda and the service can run the code on your behalf using AWS infrastructure. 
+AWS Lambda supports multiple coding languages, including Node.js, Java, or Python. 
+After you upload your code and create a Lambda function, AWS Lambda takes care of provisioning and managing the servers used to run the code.
+
+Part 1: Event-Driven Programming with Amazon Kinesis and AWS Lambda
+
+Task 1: Create an Amazon Kinesis Stream
+      Data stream name: Lab-Stream
+      Shards: 1
+      Capacity Mode: Choose  Provisioned
+
+Task 2: Create a Lambda Function
+In this task, you define an AWS Lambda function that will be triggered by data coming into the stream.
+You start by selecting a Lambda blueprint. Blueprints are pre-built for you and can be customized to suit your specific needs
+In the Kinesis trigger section, configure:
+    Kinesis stream: Enter : Lab-Stream
+This will configure the Lambda function so that it is triggered whenever data comes into the Kinesis stream you created earlier.
+
+Task 3: Test your Function
+In this task, you simulate data coming from a stream to trigger your Lambda function.
+    Choose the Test tab.
+ Note: An event template for Kinesis will be automatically selected. The event contains a simulated message arriving via Kinesis.
+The Test event page is displayed.
+      For Event Name: Enter :stream
+      Choose Save. Choose Test
+This generates the test data for Amazon CloudWatch.
+Choose the Monitor tab.
+You can now view the CloudWatch metrics for your Lambda function. Metrics should be available for Invocations and Duration.
+
+Part 2: Event Driven Programing with Amazon DynamoDB and AWS Lambda
+Here, you learn about a different event driven programming method, this time with DynamoDB and Lambda.
+
+Task 4: Create Tables in DynamoDB
+
+In the AWS Management Console, search for DynamoDB.
+Create table and configure:
+        Table name: GameScoreRecords
+        Partition key: RecordID and select Number from the drop-down list
+Choose Create table.
+Create another table for linking scores to users.
+Choose Create table and configure:
+Table name: GameScoresByUser
+Partition key: Username and select String from the drop-down list
+Choose Create table.
+  You now activate DynamoDB Streams on the first table. This generates streaming data whenever there is any change to the table (insert, update, delete).
+
+Task 5: Create a Lambda Function
+In this task, you create a Lambda function that will be triggered by updates to your DynamoDB table.
+
+

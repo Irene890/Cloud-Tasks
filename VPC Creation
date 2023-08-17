@@ -1,0 +1,15 @@
+Creating a VPC in AWS
+
+In this hands-on lab scenario, you’re a cloud network engineer tasked with setting up the security and network architecture for your organization's production environment. 
+You're tasked to create a virtual private cloud (VPC), subnets across multiple availability zones (AZs), routes, and an internet gateway, as well as adding security using 
+security groups and network access control lists (NACLs). 
+
+a) Create a VPC with Cidr block of 10.0.0.0/16
+b) Create a public and private subnet in different AZs.
+- Public subnet cidr block 10.0.1.0/24
+- Private subnet cifr block 10.0.2.0/24
+c) Create Routes and IGW
+- Auto assign ipv4 for instances launched in public subnet
+- Create IGW and attach the vpc
+d) Launch EC2 instances in both subnets
+- In public subnet, create a SG to allow SSH on port 22

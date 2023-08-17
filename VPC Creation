@@ -9,7 +9,11 @@ b) Create a public and private subnet in different AZs.
 - Public subnet cidr block 10.0.1.0/24
 - Private subnet cifr block 10.0.2.0/24
 c) Create Routes and IGW
-- Auto assign ipv4 for instances launched in public subnet
+- Enable Auto assign ipv4 for the public subnet.
 - Create IGW and attach the vpc
+- Create a public Route table and select the created VPC.
+- On the public route table, edit routes and in destination, type 0.0.0.0/0...target select the IGW created before.
+- Associate the Public Route Table with the Public Subnet
+
 d) Launch EC2 instances in both subnets
 - In public subnet, create a SG to allow SSH on port 22

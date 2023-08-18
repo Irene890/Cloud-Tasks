@@ -1,0 +1,17 @@
+A company runs many applications in a shared AWS account with hundreds of instances. 
+The application and security teams want an easy way to find resources associated with a particular application. 
+AWS tags and resource groups make it easy to identify application components.
+
+-To simplify the management of AWS resources such as EC2 instances, you can assign metadata using tags. 
+Resource groups can then use these tags to automate tasks on large numbers of resources at one time. 
+They serve as a unique identifier for custom automation, to break out cost reporting by department and much more. 
+In this hands-on lab, we will explore tag restrictions and best practices for tagging strategies. 
+We will also get experience with the Tag Editor, AWS resource group basics, and leveraging automation through the use of tags.
+
+1) Set Up AWS Config
+2) Create an AMI from an already configured EC2 instance. Right-click on the name of the selected instance, and select Actions > Image and templates > Create image.
+3) Click AMIs in the console. Click Launch instance from AMI.
+4) Tag Applications with the Tag Editor
+- Navigate to Resource Groups & Tag Editor. Click Tag Editor in the left-hand menu.
+-Give the selected Resources (EC2 & S3) tag names.
+5) Create Resource Groups and Use AWS Config Rules for Compliance

@@ -1,0 +1,16 @@
+SCENARIO
+In this hands-on lab, we will create a VPC endpoint and an S3 bucket to illustrate the benefits available for our cloud implementations. 
+VPC endpoints can be used instead of NAT gateways to provide access to AWS resources. 
+Many customers have legitimate privacy and security concerns about sending and receiving data across the public internet. 
+VPC endpoints for S3 can alleviate these challenges by using the private IP address of an instance to access S3 with no exposure to the public internet.
+
+1) Create an S3 Bucket
+2) Create a VPC Endpoint
+3) Verify VPC Endpoint Access to S3
+Log in to the terminal provided for the lab using the Cloud Server of Public Instance credentials provided in the lab resources:
+ssh cloud_user@<PUBLIC_IP_ADDRESS>
+In the same terminal, log in using the Cloud Server of Private Instance credentials provided in the lab resources:
+ssh cloud_user@<PRIVATE_IP_ADDRESS>
+View the S3 bucket: Command is
+aws s3 ls
+You should see two S3 buckets — the one provided for the lab and the one you created.

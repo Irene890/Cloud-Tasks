@@ -1,0 +1,24 @@
+Open the AWS console, select EFS
+Create EFS File system and give it a name
+Select customize to check other settings configurations
+By default the EFS encryption at REST is selected
+Create the EFS File.
+Create a linux EC2 to mount the EFS
+In the EC2 instance, create a new SG and name it EFS_SG 
+Create EC2 instance
+View the SG for the EFS and edit it the inbound rules to add new rule: Type:NFS source:Custom Select the EFS_SG
+Access the terminal for your EC2 instance, Run the following command to install the amazon-efs-utils package.
+---sudo dnf install -y amazon-efs-utils
+Create directory
+---sudo mkdir efs
+Go back to your EFS file system, select it, click attache to use the commands that shpuld be used
+Using the EFS mount helper:
+---sudo mount -t efs -o tls fs-0bec0500b27cfcf43:/ efs
+Using the NFS client:
+---sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-0bec0500b27cfcf43.efs.us-east-1.amazonaws.com:/ efs
+
+To counter check whether it installed
+--df -T
+Create a file in the efs directory created above
+--cd efs
+--sudo mkdir test.txt

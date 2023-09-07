@@ -1,0 +1,71 @@
+Configure Cloud trail. 
+--Cloud trail will generate an audit log of all activity on our account
+Cloudtrail sends logs to S3
+-Cloud Trail stores the logs in S3
+Create an Athena Table
+--Create s3 bucket that'll store the athena results
+--Associate the S3 bucket with Athena
+-- On Query 1 table, type CREATE DATABASE athenadb (to create database)
+-- DB is empty, create a new table. Use SQL to query below and RUN
+
+SQL Query 2
+CREATE EXTERNAL TABLE cloudtrail_logs (
+eventversion STRING,
+useridentity STRUCT<
+               type:STRING,
+               principalid:STRING,
+               arn:STRING,
+               accountid:STRING,
+               invokedby:STRING,
+               accesskeyid:STRING,
+               userName:STRING,
+sessioncontext:STRUCT<
+attributes:STRUCT<
+               mfaauthenticated:STRING,
+               creationdate:STRING>,
+sessionissuer:STRUCT<  
+               type:STRING,
+               principalId:STRING,
+               arn:STRING, 
+               accountId:STRING,
+               userName:STRING>>>,
+eventtime STRING,
+eventsource STRING,
+eventname STRING,
+awsregion STRING,
+sourceipaddress STRING,
+useragent STRING,
+errorcode STRING,
+errormessage STRING,
+requestparameters STRING,
+responseelements STRING,
+additionaleventdata STRING,
+requestid STRING,
+eventid STRING,
+resources ARRAY<STRUCT<
+               ARN:STRING,
+               accountId:STRING,
+               type:STRING>>,
+eventtype STRING,
+apiversion STRING,
+readonly STRING,
+recipientaccountid STRING,
+serviceeventdetails STRING,
+sharedeventid STRING,
+vpcendpointid STRING
+)
+ROW FORMAT SERDE 'com.amazon.emr.hive.serde.CloudTrailSerde'
+STORED AS INPUTFORMAT 'com.amazon.emr.cloudtrail.CloudTrailInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION 's3://YOUR_BUCKET_NAME/AWSLogs/YOUR_ACCOUNT_NUMBER/';
+
+--Remember to specify the location of the cloud trail s3 bucket in the code
+
+SQL Query 3 - Selects the below attributes from the cloud-trail logs. RUN
+SELECT
+ useridentity.arn,
+ eventname,
+ sourceipaddress,
+ eventtime
+FROM cloudtrail_logs
+LIMIT 100;

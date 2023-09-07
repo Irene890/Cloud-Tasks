@@ -6,7 +6,7 @@ Create an Athena Table
 --Create s3 bucket that'll store the athena results
 --Associate the S3 bucket with Athena
 -- On Query 1 table, type CREATE DATABASE athenadb (to create database)
--- DB is empty, create a new table. Use SQL to query below and RUN
+-- DB is empty, create a new table (Defines Table schema). Use SQL to query below and RUN
 
 SQL Query 2
 CREATE EXTERNAL TABLE cloudtrail_logs (

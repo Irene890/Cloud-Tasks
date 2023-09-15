@@ -1,0 +1,85 @@
+Creating an Amazon Aurora RDS Database (MySQL Compatible)
+
+Description: Create an Aurora MySQL database. 
+--First, verify that the security groups, network ACL (NACL), and route tables are all configured to allow communication between an instance in a public subnet and an RDS database in a private subnet. 
+--After verifying the appropriate settings are in place, create the database. 
+-- Use an EC2 instance as a bastion host to allow connection to the private database from an external source.
+
+Navigate to EC2 using the Services menu. Select Instances (running).
+
+Check the checkbox to the left of the Bastion Host instance.
+-Verify that there is both a local route and a route to the internet gateway.
+-Ensure the two private subnets do not have a route to the internet gateway: This is for the Databases
+- Confirm Private Subnet 1&2 only have a local internet route
+-Ensure the NACLs and Security Groups Are Configured
+-Verify that the inbound and outbound rules allow all TCP traffic and that all other traffic is denied.
+- In Security groups. Ensure that inbound rules allow SSH traffic on the SSH security group:
+
+In the security group details, select the Inbound rules tab.
+- Confirm that there is a rule allowing SSH traffic on port 22.
+- Ensure that inbound rules allow MySQL traffic on the MySQL security group:
+- Confirm that there is a rule allowing MySQL traffic on port 3306.
+
+Create a Database Subnet Group
+- Create DB subnet group
+
+Name: In the text box, enter AuroraLabSubnetGroup.
+VPC: select default VPC.
+Availability Zones: Select us-east-1b and us-east-1c.
+Subnets:Select the two subnets associated with us-east-1b and us-east-1c.
+The subnet group is created.
+
+Create an Amazon Aurora Cluster
+Click Create database.
+Ensure Standard create is selected.
+Select Aurora (MySQL Compatible).
+
+Configure the Settings section:
+DB cluster identifier: AuroraLabCluster.
+Master username: admin
+Master password: Password1
+Confirm master password: Password1
+Select Burstable classes (includes t classes). Leave the default size of db.t3.small.
+
+Ensure the Connectivity section is configured correctly:
+
+Compute resource: Ensure Don't connect to an EC2 compute resource is selected.
+DB subnet group: Ensure auroralabsubnetgroup is selected.
+Public access: Ensure No is selected. The database will not have a public IP and will only be accessible from the bastion host.
+VPC security group (firewall): Choose existing is selected.
+Existing VPC security groups: Select the SecurityGroupMySQL security group.
+Click Create database.
+
+You should see three resources: one regional cluster and two reader instances. The auroralabcluster-instance-1 instance will become a writer instance.
+
+Verify That You Can Authenticate to the Aurora Cluster
+Select the auroralabcluster regional cluster name.
+In the Connectivity & security section of the cluster details, review the writer and reader endpoints. The reader endpoint is indicated with an ro in the endpoint name.
+Connect to the writer endpoint:
+Open a terminal application, and log in to the bastion host using the credentials provided for the lab:
+--ssh cloud_user@<PUBLIC-IP-ADDRESS>
+Verify that the MySQL command line is installed:
+--mysql --version
+Navigate to the RDS Management Console tab and copy the writer endpoint name.
+Navigate back to the terminal and connect to the writer endpoint, replacing <WRITER-ENDPOINT-NAME> with your copied endpoint name:
+--mysql -h <WRITER-ENDPOINT-NAME> -u admin -p
+When prompted, enter your Password1 password.
+Show the databases:
+--show databases;
+Check the global variables command:
+--show global variables like 'aurora_server_id';
+You should now be connected to auroralabcluster-instance-1.
+Navigate back to the RDS Management Console tab and refresh the Databases page to verify whether the reader instance is available. Even if it's not available yet, you can try to connect to it.
+Connect to the reader endpoint:
+Select the auroralabcluster cluster name.
+
+In the Endpoints section of the cluster details, copy the reader endpoint name.
+Connect to the reader endpoint, replacing <READER-ENDPOINT-NAME with your copied endpoint name:
+
+mysql -h <READER-ENDPOINT-NAME> -u admin -p
+Enter your Password1 password.
+
+Check the global variables:
+--show global variables like 'aurora_server_id';
+
+The reader instance can only serve read requests; whereas, the writer instance can server both read and write requests.

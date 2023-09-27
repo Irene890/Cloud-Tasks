@@ -1,0 +1,71 @@
+To simplify the management of AWS resources such as EC2 instances, you can assign metadata using tags. Resource groups can then use these tags to automate tasks on large numbers of resources at one time. 
+They serve as a unique identifier for custom automation, to break out cost reporting by department, and much more.
+
+Create and Assign Project-Level Tags to Resources
+Review the Pre-configured Resources
+-Navigate to EC2 > Instances (running).
+-Select any of the instances listed.
+-In the search bar, enter S3, and open it in a new tab. You will see two buckets with starbucket and bigbucket in the names.
+
+Module 1 Tagging
+-In a new browser tab, navigate to Resource Groups & Tag Editor.
+-Click Tag Editor
+-In the Find resources to tag section, set the following values:
+      Regions: Select us-east-1. (It should already be selected.)
+      Resource types:
+      Enter and select AWS::EC2::Instance.
+      Enter and select AWS::S3::Bucket.
+      Click Search resources.
+-In the Resource search results section, set the following values:
+-In the Filter resources search window, enter star, and press Enter to execute the search.
+-Select all the resources, and click Clear filters.
+-Click Manage tags of selected resources.
+-In the Edit tags of all selected resources section, click Add tag, and set the following values:
+      Tag key: Enter Project.
+      Tag value: Enter Star.
+-Click Review and apply tag changes > Apply changes to all selected.
+-Navigate to the S3 browser tab, click on the starbucket bucket > Properties tab.
+-Scroll down to Tags, and you should see Project under Key, with Star as the Value.
+
+Module 2 Tagging
+-Navigate back to the Resource Groups Management browser tab.
+-With the same Region and resource types selected from the previous step, click Search resources again.
+-In the Resource search results section, set the following values:
+-In the Filter resources search window, enter big, and press Enter.
+-Select all of the instances.
+-Click Manage tags of selected resources.
+-In the Edit tags of all selected resources section, click Add tag, and set the following values:
+      Tag key: Enter Project.
+      Tag value: Enter Big.
+-Click Review and apply tag changes > Apply changes to all selected.
+-Create Resource Groups from the Assigned Tags
+-Create the Big-Project-Resource-Group Resource Group
+-In the left-hand menu, select Create Resource Group.
+-For Group type, select Tag based.
+-In the Grouping criteria section, All supported resource types should already be selected.
+-In the Tags field, select the following:
+      Tag key: Select Project.
+      Optional tag value: Select Big.
+      Click Preview group resources.
+-Ensure the three group resources show up in the Group resources section.
+-In the Group details section, enter a Group name of Big-Project-Resource-Group.
+-Click Create group.
+-Create the Star-Project-Resource-Group Resource Group
+-In the left-hand menu, click Create Resource Group.
+-For Group type, select Tag based.
+-In the Grouping criteria section, All supported resource types should still be selected.
+-In the Tags field, select the following:
+Tag key: Select Project.
+Optional tag value: Select Star.
+Click Preview group resources.
+Ensure the three group resources show up in the Group resources section.
+In the Group details section, enter a Group name of Star-Project-Resource-Group.
+Click Create group.
+View the Saved Resource Groups
+In the left-hand menu, click Saved Resource Groups.
+Click Big-Project-Resource-Group.
+Here, you should see all the resources in your Big-Project-Resource-Group group.
+Test Resource Groups through AWS CloudWatch
+In a new browser tab, navigate to CloudWatch.
+Under Overview, click on the Filter by resource group dropdown menu and select either the Big-Project-Resource-Group or the Star-Project-Resource-Group.
+Review the resource-group-level statistics.

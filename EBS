@@ -1,0 +1,10 @@
+EBS Volumes
+-Elastic Block store-storage volumes that can be attached to the EC2 instances.
+- Uses:run an O/S, run a DB, install applications, create file system
+- Highly available , automatically replicated  within a single AZ
+- Scalable, dynamically change of capacity with zero downtime
+- Designed for mission critical workloads
+
+Types of EBS Volumes
+1) General Purpose: gp2, gp3,io1,io2
+2) Hard disk drive: c

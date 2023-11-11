@@ -1,0 +1,19 @@
+EBS Volumes
+-Elastic Block store-storage volumes that can be attached to the EC2 instances.
+- Uses:run an O/S, run a DB, install applications, create file system
+- Highly available , automatically replicated  within a single AZ
+- Scalable, dynamically change of capacity with zero downtime
+- Designed for mission critical workloads
+
+Types of EBS Volumes
+1) Solid State Disk
+    a) General Purpose: gp2, gp3,io1,io2
+gp2- 3 IOPs per gig (each gigabyte (GB) of data storage capacity,the storage device is expected to handle or deliver approximately 3 IOPS.)
+Max 16,000 IOPS. Good for boot volumes. 
+gp3- 3000 IOPS for any volume size (1gig - 16TB), max 16,000 IOPS.Cheaper. Good for boot volumes, for dev and tests.
+    b) Provisioned IOPS (io1) SSD ---64,000 IOPS per volume, 50 IOPS per gig. Latency sensitive apps.
+Provisioned IOPS (io2) SSD--500 IOPS per gig--64,000 IOPS per volume--same price with io1, 99.999% durability
+Provisioned IOPS io2 Block Express--For Storage Area Network (SAN). 4x throughput, IOPS...64 TB upto 256,000 IOPS per volume
+2) Hard Disk Drive (M/Bs intensive)--can't be boot volume
+-Throughput Optimized HDD (st1)--40Mb/s per TB---Frequently accessed throughput-intensive workloads/big-data/warehouse
+- Cold HDD(sc1)12 Mb/s per TB.

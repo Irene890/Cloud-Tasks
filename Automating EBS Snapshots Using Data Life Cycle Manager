@@ -1,3 +1,8 @@
+Problem Statement:
+An organization operating in a cloud-based infrastructure, relying on Amazon Web Services (AWS), needs an efficient solution to take daily snapshots of its Amazon Elastic Block Store
+(EBS) volumes. Currently, the process of creating snapshots is manual, time-consuming, and error-prone. The organization seeks to implement an automated system for taking daily EBS
+volume snapshots to improve data backup and recovery processes and ensure business continuity.
+
 Amazon Lifecycle Manager 
 --Provides a simple, automated way to back up data stored on Amazon EBS volumes.
 Benefits
@@ -49,24 +54,48 @@ Under Advanced Details:
 - KMS Encryption for snapshot is enabled
 REVIEW POLICY then CREATE POLICY
 
+**************************************************************************************************************************
                     EBS SNAPSHOT EVENTS:
 
 Amazon EBS sends events to EventBridge when the following volume events occur:createSnapshot,createSnapshots,copySnapshot and shareSnapshot.
 
+Create an Amazon SNS Topic:
+1) Select SNS in AWS console
+2) Click on Create Topic
+3) Enter topic name 
+4) Click Create Topic to create the SNS topic.
+5) Create a Subscription for the SNS Topic
+6) Select the newly created SNS topic.
+7) Click on Create Subscription
+8) Choose the protocol for notification: Email 
+9) Enter the recipient's email address and confirm it
+10) Click Create Subscription
 
+ Amazon EventBridge Rule:
+1) Open the Amazon EventBridge
+2) Choose Rules, and then choose Create rule.
+3) Enter values for Name and Description.
+4) For Event bus-default.
+5) For Event type, select Rule with an event pattern.
+6) For Event source, select AWS events or EventBridge partner events.
+7) For AWS service, select EC2.
+8) For Event type, select EBS Snapshot Notification, you can further choose a Specific event(s) i.e) createSnapshot.
+9) For Target types, choose AWS service.
+10) For Select target, choose SNS Topic function, and for select the topic that you created earlier.
+11) Configure tags
+12) Review Policy, then Creat Rule
 
+Immediately the snapshot is created , an email is sent to the email entered.
 
-
-
-
-
-
-
-
-
+*****************************************************************************************************************
+DELETE
+.Delete Rule
+.Delete SNS Subscription
+.Delete SNS Topic
 .Delete snapshots in both regions.
-.Delete the Lifecycle manager.
+.Delete the Lifecycle manager rule
 .Terminate EC2 instance.
+.Delete the 10 Gig Volume
 
 
 

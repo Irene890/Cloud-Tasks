@@ -1,0 +1,59 @@
+Amazon Lifecycle Manager 
+--Provides a simple, automated way to back up data stored on Amazon EBS volumes.
+Benefits
+1) Automated snapshot and AMI creation
+2) Fast snapshot restore integration
+3) Built-in cross-Region copy- Automatically copy snapshots that are created by a lifecycle policy to up to three AWS Regions.
+4) Automated cross-account snapshot copy
+
+Automating EBS Snapshots Using Life Cycle Manager
+STEPS:
+1) Launch an EC2 instance with an attached EBS volume
+2) Create Lifecycle policy within DLM
+3) Schedule / Enable Cross-Region replication of the EBS snapshot
+
+STEP 1 EXPLAINED::: Launch an EC2 instance with an attached EBS volume
+-Log in to your free tier AWS A/C
+- Launch instance, name of instanceEC2DLMInstance, Amazon Linux OS (Free tier),
+Instance type-t2.micro (Free tier)
+-Proceed without key pair
+-Configure storage--Add new volume--10 Gig gp3
+Launch Instance, wait for it to set up
+- Add tag to the 10 Gig volume under EBS-Volumes--name it:EBSDLMVolume
+
+STEP 2 -Create Lifecycle policy within Lifecyle Manager
+-Under EBS, select LifeCycle Manager
+-Create EBS snapshot policy, click Next step
+-Target Resources: Volume
+- Tag Resource Tags: EBSDLMVolume
+- Description: EBSDLMVolume
+- Use default IAM role that enables: "Create,Delete, Describe,Copy,Modify snapshots,DescribeInstances",DescribeVolumes etc
+- Assign Tags: Key:Name Value-DLMPolicy      Key: CreatedBy     Value: Irene
+- Policy Status: Enabled ( To immediately start creating snapshots)
+- Click Next
+
+STEP 3- Schedule/ Enable Cross-Region replication of the EBS snapshot
+Schedules define how often the policy runs and the specific actions that are to be performed.
+- Give a name to your schedule. Schedule name:EBS-Daily-Snapshots
+- Frequency : Daily
+- Every: 24 hours
+- Starting at--input the time
+- Retention Type:Count or age
+count: 2 copies
+
+Under Advanced Details:
+- Tagging (Specify the tags that are to be applied to snapshots created by this schedule.)- Select Copy Tags from source
+- Can also enable Fast snapshot restore
+- Enable Cross-Region copy for this schedule--us-east-1
+---Select the Target region i.e) us-east-1, to expire in 1 day after creation
+- KMS Encryption for snapshot is enabled
+REVIEW POLICY then CREATE POLICY
+
+.Delete snapshots in both regions.
+.Delete the Lifecycle manager.
+.Terminate EC2 instance.
+
+
+
+
+

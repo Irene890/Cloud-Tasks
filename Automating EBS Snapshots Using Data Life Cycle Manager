@@ -37,7 +37,7 @@ Schedules define how often the policy runs and the specific actions that are to 
 - Give a name to your schedule. Schedule name:EBS-Daily-Snapshots
 - Frequency : Daily
 - Every: 24 hours
-- Starting at--input the time
+- Starting at--input the time (09:23)
 - Retention Type:Count or age
 count: 2 copies
 
@@ -48,6 +48,21 @@ Under Advanced Details:
 ---Select the Target region i.e) us-east-1, to expire in 1 day after creation
 - KMS Encryption for snapshot is enabled
 REVIEW POLICY then CREATE POLICY
+
+                    EBS SNAPSHOT EVENTS:
+
+Amazon EBS sends events to EventBridge when the following volume events occur:createSnapshot,createSnapshots,copySnapshot and shareSnapshot.
+
+
+
+
+
+
+
+
+
+
+
 
 .Delete snapshots in both regions.
 .Delete the Lifecycle manager.

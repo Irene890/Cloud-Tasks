@@ -3,9 +3,9 @@ An organization operating in a cloud-based infrastructure, relying on Amazon Web
 (EBS) volumes. Currently, the process of creating snapshots is manual, time-consuming, and error-prone. The organization seeks to implement an automated system for taking daily EBS
 volume snapshots to improve data backup and recovery processes and ensure business continuity.
 
-# Amazon Lifecycle Manager 
+# AMAZON LIFECYCLE MANAGER 
 --Provides a simple, automated way to back up data stored on Amazon EBS volumes.
-### Benefits
+## Benefits
 1) Automated snapshot and AMI creation
 2) Fast snapshot restore integration
 3) Built-in cross-Region copy- Automatically copy snapshots that are created by a lifecycle policy to up to three AWS Regions.
@@ -17,7 +17,7 @@ STEPS:
 2) Create Lifecycle policy within DLM
 3) Schedule / Enable Cross-Region replication of the EBS snapshot
 
-STEP 1 EXPLAINED::: Launch an EC2 instance with an attached EBS volume
+## STEP 1 EXPLAINED::: Launch an EC2 instance with an attached EBS volume
 -Log in to your free tier AWS A/C
 - Launch instance, name of instanceEC2DLMInstance, Amazon Linux OS (Free tier),
 Instance type-t2.micro (Free tier)
@@ -26,7 +26,7 @@ Instance type-t2.micro (Free tier)
 Launch Instance, wait for it to set up
 - Add tag to the 10 Gig volume under EBS-Volumes--name it:EBSDLMVolume
 
-STEP 2 -Create Lifecycle policy within Lifecyle Manager
+## STEP 2 -Create Lifecycle policy within Lifecyle Manager
 -Under EBS, select LifeCycle Manager
 -Create EBS snapshot policy, click Next step
 -Target Resources: Volume
@@ -37,7 +37,7 @@ STEP 2 -Create Lifecycle policy within Lifecyle Manager
 - Policy Status: Enabled ( To immediately start creating snapshots)
 - Click Next
 
-STEP 3- Schedule/ Enable Cross-Region replication of the EBS snapshot
+## STEP 3- Schedule/ Enable Cross-Region replication of the EBS snapshot
 Schedules define how often the policy runs and the specific actions that are to be performed.
 - Give a name to your schedule. Schedule name:EBS-Daily-Snapshots
 - Frequency : Daily
@@ -46,7 +46,7 @@ Schedules define how often the policy runs and the specific actions that are to 
 - Retention Type:Count or age
 count: 2 copies
 
-Under Advanced Details:
+## Under Advanced Details:
 - Tagging (Specify the tags that are to be applied to snapshots created by this schedule.)- Select Copy Tags from source
 - Can also enable Fast snapshot restore
 - Enable Cross-Region copy for this schedule--us-east-1
@@ -55,11 +55,11 @@ Under Advanced Details:
 REVIEW POLICY then CREATE POLICY
 
 **************************************************************************************************************************
-                    EBS SNAPSHOT EVENTS:
+# EBS SNAPSHOT EVENTS:
 
 Amazon EBS sends events to EventBridge when the following volume events occur:createSnapshot,createSnapshots,copySnapshot and shareSnapshot.
 
-Create an Amazon SNS Topic:
+## Create an Amazon SNS Topic:
 1) Select SNS in AWS console
 2) Click on Create Topic
 3) Enter topic name 
@@ -71,7 +71,7 @@ Create an Amazon SNS Topic:
 9) Enter the recipient's email address and confirm it
 10) Click Create Subscription
 
- Amazon EventBridge Rule:
+ ## Amazon EventBridge Rule:
 1) Open the Amazon EventBridge
 2) Choose Rules, and then choose Create rule.
 3) Enter values for Name and Description.
@@ -88,7 +88,7 @@ Create an Amazon SNS Topic:
 Immediately the snapshot is created , an email is sent to the email entered.
 
 *****************************************************************************************************************
-DELETE
+## DELETE
 .Delete Rule
 .Delete SNS Subscription
 .Delete SNS Topic

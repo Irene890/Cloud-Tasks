@@ -34,10 +34,7 @@ Help him by showing him how easy Lambda functions can be.
 2) For Event name, type mytest
 3) In the Event JSON box, replace the sample code with the following:
 
-_             _ { 
-              "first_name": "Irene",
-              "last_name": "Ndung'u" 
-              }__
+ { "first_name": "Irene","last_name": "Ndung'u"}
    
 4) Click Format JSON, Save and Test.
 

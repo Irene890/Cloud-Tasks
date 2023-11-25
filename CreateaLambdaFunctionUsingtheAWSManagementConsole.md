@@ -44,3 +44,6 @@ Help him by showing him how easy Lambda functions can be.
 3) Click View logs in CloudWatch, it opens a new window
 4) Under Log streams, click the most recent log stream.
 5) Review the log. You should see similar output as you did in the execution results.
+
+
+

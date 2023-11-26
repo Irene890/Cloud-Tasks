@@ -80,7 +80,7 @@ _psql -U postgres -h <endpoint name for the database>_
 
 ### Create User
 1) Create guru user:
-2) CREATE USER guru WITH PASSWORD 'my_passwd'; 
+2) CREATE USER guru WITH PASSWORD 'my_pass'; 
 -Quit postgres in the terminal: \q
 3) Confirm connection as the guru user:
 psql -U guru -h <ENDPOINT_INFO> postgres

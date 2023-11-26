@@ -1,10 +1,12 @@
 ## Objective
 Deploy a new RDS instance to be used for testing a new application. 
-_i) Deploy a single-AZ RDS instance._
-_ii) Enable connectivity to existing EC2 node._
-_iii) Confirm connectivity._
+i) Deploy a single-AZ RDS instance.
+ii) Enable connectivity to existing EC2 node.
+iii) Confirm connectivity.
 ##_ Diagram Illustrating the above:_
+
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/8d2747cd-1148-4413-b850-aef918f974e7)
+
 # Deploy RDS Instance
 1) In AWS Management Console, select RDS.
 2) Click the Create database button.

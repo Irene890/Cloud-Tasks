@@ -1,5 +1,4 @@
-## Challenge 10
-## Project Scope
+## Challenge 10: PROJECT SCOPE
 The project scope encompasses the end-to-end implementation of Amazon RDS (Relational Database Service) with MySQL as the preferred database engine within XYZ Corporation.
 The project scope aims to provide XYZ Corporation with a fully functional, secure, and scalable RDS MySQL database environment, meeting the specified requirements and
 supporting the organization's growth objectives. The scope is subject to periodic review and adjustments based on project progress and emerging organizational needs.

@@ -36,7 +36,7 @@ Enter the master password that you used when creating the RDS instance.
 Link below shows the connection was successful.
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/17cafc84-91fd-4cc2-8dc2-f5b15dd97970)
 
-# SECURING AN RDS INSTANCE
+## SECURING AN RDS INSTANCE
 
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/1ad5050e-c5c7-472a-8504-4e7cf5050913)
 
@@ -59,11 +59,29 @@ Snip showing an Encrypted Snapshot
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/2ff84c45-ea8e-410b-9fc3-6c90d55ff20c)
 14) Snip to show Restoration 
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/ffc1218c-d992-434f-8882-0f20b40e222b)
-           _ DB engine is PostgreSQL._
-           _ Multi-AZ DB instance._
-            For the DB instance identifier, enter encrypted identifier
-            Existing VPC security groups, select default X to remove the default, and from the dropdown menu select -DatabaseSecurityGroup-.
-            For Instance configuration, select Burstable classes (includes t classes) and from the dropdown menu, select db.t3.medium.
-            Note, Enable Encryption is enabled by default.
+           i) _ DB engine is PostgreSQL._,
+          ii)  _ Multi-AZ DB instance._
+    iii) _For the DB instance identifier, enter encrypted identifier_
+          iv)  _ Existing VPC security groups, select default X to remove the default, and from the dropdown menu select -DatabaseSecurityGroup-._
+          v) _ For Instance configuration, select Burstable classes (includes t classes) and from the dropdown menu, select db.t3.medium._
+           vi) _ Note, Enable Encryption is enabled by default._
 15) Select Restore DB instance.
-- There should now be two databases displayed below DB identifier.
+16) There should now be two databases displayed as captured below.
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/a58f6c1f-2d72-4633-9428-3c586b89637a)
+
+## Enable Connectivity to Existing EC2 Instance
+1) Once the database's status is listed as Available, select the database identifier.
+2) Copy the endpoint name.
+3) Confirm Connectivity, Open the terminal and log in to the EC2 instance
+_ssh cloud_user@<PUBLIC_IP_ADDRESS>_
+4) Connect to the database
+_psql -U postgres -h <endpoint name for the database>_
+5) Enter the RDS master password
+
+### Create User
+1) Create guru user:
+2) CREATE USER guru WITH PASSWORD 'my_passwd'; 
+-Quit postgres in the terminal: \q
+3) Confirm connection as the guru user:
+psql -U guru -h <ENDPOINT_INFO> postgres
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/bb7a45b1-9d06-4630-b7e1-a33300751d51)

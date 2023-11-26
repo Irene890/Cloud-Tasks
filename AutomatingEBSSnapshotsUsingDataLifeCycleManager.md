@@ -92,13 +92,13 @@ Immediately the snapshot is created , an email is sent to the email entered.
 
 *****************************************************************************************************************
 ## DELETE
-.Delete Rule
-.Delete SNS Subscription
-.Delete SNS Topic
-.Delete snapshots in both regions.
-.Delete the Lifecycle manager rule
-.Terminate EC2 instance.
-.Delete the 10 Gig Volume
+a) Delete Rule
+b) Delete SNS Subscription
+c) Delete SNS Topic
+d) Delete snapshots in both regions.
+e) Delete the Lifecycle manager rule
+f) Terminate EC2 instance.
+g) Delete the 10 Gig Volume
 
 
 

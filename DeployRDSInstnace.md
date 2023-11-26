@@ -1,8 +1,8 @@
 ## Objective
 Deploy a new RDS instance to be used for testing a new application. 
-        i) Deploy a single-AZ RDS instance.
-       ii) Enable connectivity to existing EC2 node.
-      iii) Confirm connectivity.
+_ i) Deploy a single-AZ RDS instance.
+ii) Enable connectivity to existing EC2 node.
+iii) Confirm connectivity._
 ## Diagram Illustrating the above:
 https://drive.google.com/file/d/1KE13NDVSuJhTNA4SOFczGmG5G6IH3zj0/view?usp=sharing
 

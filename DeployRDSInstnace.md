@@ -26,7 +26,6 @@ _https://drive.google.com/file/d/1KE13NDVSuJhTNA4SOFczGmG5G6IH3zj0/view?usp=shar
 ## Enable Connectivity to Existing EC2 Instance
 1) Once the database's status is listed as Available, select the database identifier.
 2) Under Endport & port highlighted in the below link, copy the endpoint name.
-_https://drive.google.com/file/d/1u4DqvjjrQpOEEvFq80x8fENlg6DFL428/view?usp=sharing_
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/f70f24ca-c750-4b0a-b8e8-b865cdb35ad2)
 4) Confirm Connectivity, Open the terminal and log in to the EC2 node
 _ssh cloud_user@<PUBLIC_IP_ADDRESS>_
@@ -35,3 +34,4 @@ _psql -U postgres -h <endpoint name for your database> postgres_
 Enter the master password that you used when creating the RDS instance. 
 Link below shows the connection was successful.
 _https://drive.google.com/file/d/1_QLRtEfYFaDTa6au6zqzdFIzjZedSvbU/view?usp=sharing_
+https://drive.google.com/file/d/1u4DqvjjrQpOEEvFq80x8fENlg6DFL428/view?usp=sharing

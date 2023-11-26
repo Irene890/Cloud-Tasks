@@ -4,8 +4,7 @@ _i) Deploy a single-AZ RDS instance._
 _ii) Enable connectivity to existing EC2 node._
 _iii) Confirm connectivity._
 ##_ Diagram Illustrating the above:_
-_https://drive.google.com/file/d/1KE13NDVSuJhTNA4SOFczGmG5G6IH3zj0/view?usp=sharing_
-
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/8d2747cd-1148-4413-b850-aef918f974e7)
 # Deploy RDS Instance
 1) In AWS Management Console, select RDS.
 2) Click the Create database button.
@@ -34,4 +33,3 @@ _psql -U postgres -h <endpoint name for your database> postgres_
 Enter the master password that you used when creating the RDS instance. 
 Link below shows the connection was successful.
 _https://drive.google.com/file/d/1_QLRtEfYFaDTa6au6zqzdFIzjZedSvbU/view?usp=sharing_
-https://drive.google.com/file/d/1u4DqvjjrQpOEEvFq80x8fENlg6DFL428/view?usp=sharing

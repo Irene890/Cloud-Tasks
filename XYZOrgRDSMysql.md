@@ -14,5 +14,5 @@ integrity maintained throughout the process.
 - Seamless integration of RDS MySQL with existing systems and applications, ensuring
 compatibility and interoperability.
 
-### What is RDS? 
-![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/83e30a38-048b-491e-b333-cac56e7b1c9e) It's a managed database option for MySQL, Maria, PostgreSQL, Microsoft SQL Server, Oracle and MySQL-compatible Aurora. -Best for structured, relational data store needs. -Offers automanted backups and patching in customer-defined maintenance windows.
+### What is RDS?  ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/83e30a38-048b-491e-b333-cac56e7b1c9e) 
+It's a managed database option for MySQL, Maria, PostgreSQL, Microsoft SQL Server, Oracle and MySQL-compatible Aurora. -Best for structured, relational data store needs. -Offers automanted backups and patching in customer-defined maintenance windows.

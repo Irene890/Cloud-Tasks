@@ -2,7 +2,10 @@
 An organization operating in a cloud-based infrastructure, relying on Amazon Web Services (AWS), needs an efficient solution to take daily snapshots of its Amazon Elastic Block Store
 (EBS) volumes. Currently, the process of creating snapshots is manual, time-consuming, and error-prone. The organization seeks to implement an automated system for taking daily EBS
 volume snapshots to improve data backup and recovery processes and ensure business continuity.
+
+## Below is the Diagram link illustrating the solution using Amazon Lifecycle Manager 
 https://drive.google.com/file/d/12buA2kKXdeLl2IH5FVncCGYf-4BUNaRr/view?usp=sharing
+
 # AMAZON LIFECYCLE MANAGER 
 --Provides a simple, automated way to back up data stored on Amazon EBS volumes.
 ## Benefits

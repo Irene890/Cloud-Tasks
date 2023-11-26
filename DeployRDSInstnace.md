@@ -1,10 +1,10 @@
-![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/f70f24ca-c750-4b0a-b8e8-b865cdb35ad2)## Objective
+## Objective
 Deploy a new RDS instance to be used for testing a new application. 
 _i) Deploy a single-AZ RDS instance._
 _ii) Enable connectivity to existing EC2 node._
 _iii) Confirm connectivity._
 ##_ Diagram Illustrating the above:_
-https://drive.google.com/file/d/1KE13NDVSuJhTNA4SOFczGmG5G6IH3zj0/view?usp=sharing
+_https://drive.google.com/file/d/1KE13NDVSuJhTNA4SOFczGmG5G6IH3zj0/view?usp=sharing_
 
 # Deploy RDS Instance
 1) In AWS Management Console, select RDS.
@@ -27,6 +27,7 @@ https://drive.google.com/file/d/1KE13NDVSuJhTNA4SOFczGmG5G6IH3zj0/view?usp=shari
 1) Once the database's status is listed as Available, select the database identifier.
 2) Under Endport & port highlighted in the below link, copy the endpoint name.
 _https://drive.google.com/file/d/1u4DqvjjrQpOEEvFq80x8fENlg6DFL428/view?usp=sharing_
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/f70f24ca-c750-4b0a-b8e8-b865cdb35ad2)
 4) Confirm Connectivity, Open the terminal and log in to the EC2 node
 _ssh cloud_user@<PUBLIC_IP_ADDRESS>_
 5) Connect to the database, pasting in the endpoint name of your database

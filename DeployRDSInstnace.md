@@ -3,7 +3,7 @@ Deploy a new RDS instance to be used for testing a new application.
 i) Deploy a single-AZ RDS instance.
 ii) Enable connectivity to existing EC2 node.
 iii) Confirm connectivity.
-##_ Diagram Illustrating the above:_
+## Diagram Illustrating the above:
 
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/8d2747cd-1148-4413-b850-aef918f974e7)
 

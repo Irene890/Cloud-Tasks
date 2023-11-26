@@ -1,7 +1,7 @@
 ## Objective
 Deploy a new RDS instance with Postgres Engine to be used for testing a new application. 
-i) Deploy a single-AZ RDS instance.
-ii) Enable connectivity to existing EC2 node.
+i) Deploy a single-AZ RDS instance
+ii) Enable connectivity to existing EC2 Instance.
 iii) Confirm connectivity.
 ## Diagram Illustrating the above:
 
@@ -35,3 +35,21 @@ _psql -U postgres -h <endpoint name for the database> postgres_
 Enter the master password that you used when creating the RDS instance. 
 Link below shows the connection was successful.
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/17cafc84-91fd-4cc2-8dc2-f5b15dd97970)
+
+# SECURING AN RDS INSTANCE
+
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/1ad5050e-c5c7-472a-8504-4e7cf5050913)
+
+1) Select RDS from the Services
+2) Select Databases to view the database instance with an available status.
+3) In the left-pane Amazon RDS menu, select Snapshots.
+4) Select System.
+5) Locate the snapshot and click the box to select the snapshot.
+6) Toggle a dropdown menu and select Copy snapshot.
+7) In the New DB Snapshot Identifier field, enter enc-rdsinstance.
+8) Enable Encryption.
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/ec8b78ab-8149-480e-8fb3-bac37dc11657)
+
+10) Select Copy snapshot.Snip showing an Encrypted Snapshot
+    
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/14f503bc-4cc5-4aec-a494-41a003a5c5c9)

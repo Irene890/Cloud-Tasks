@@ -59,11 +59,11 @@ Snip showing an Encrypted Snapshot
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/2ff84c45-ea8e-410b-9fc3-6c90d55ff20c)
 14) Snip to show Restoration 
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/ffc1218c-d992-434f-8882-0f20b40e222b)
-DB engine is PostgreSQL.
-Multi-AZ DB instance.
-For the DB instance identifier, enter encrypted identifier
-Existing VPC security groups, select default X to remove the default, and from the dropdown menu select -DatabaseSecurityGroup-.
-For Instance configuration, select Burstable classes (includes t classes) and from the dropdown menu, select db.t3.medium.
-Note, Enable Encryption is enabled by default.
+           _ DB engine is PostgreSQL._
+           _ Multi-AZ DB instance._
+            For the DB instance identifier, enter encrypted identifier
+            Existing VPC security groups, select default X to remove the default, and from the dropdown menu select -DatabaseSecurityGroup-.
+            For Instance configuration, select Burstable classes (includes t classes) and from the dropdown menu, select db.t3.medium.
+            Note, Enable Encryption is enabled by default.
 15) Select Restore DB instance.
 - There should now be two databases displayed below DB identifier.

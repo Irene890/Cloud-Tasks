@@ -1,5 +1,5 @@
 ## Objective
-Deploy a new RDS instance to be used for testing a new application. 
+Deploy a new RDS instance with Postgres Engine to be used for testing a new application. 
 i) Deploy a single-AZ RDS instance.
 ii) Enable connectivity to existing EC2 node.
 iii) Confirm connectivity.
@@ -31,7 +31,7 @@ iii) Confirm connectivity.
 4) Confirm Connectivity, Open the terminal and log in to the EC2 node
 _ssh cloud_user@<PUBLIC_IP_ADDRESS>_
 5) Connect to the database, pasting in the endpoint name of your database
-_psql -U postgres -h <endpoint name for your database> postgres_
+_psql -U postgres -h <endpoint name for the database> postgres_
 Enter the master password that you used when creating the RDS instance. 
 Link below shows the connection was successful.
-_https://drive.google.com/file/d/1_QLRtEfYFaDTa6au6zqzdFIzjZedSvbU/view?usp=sharing_
+![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/17cafc84-91fd-4cc2-8dc2-f5b15dd97970)

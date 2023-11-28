@@ -38,7 +38,7 @@ _The success of the Amazon RDS with MySQL implementation at XYZ Corporation will
 - Seamless integration of RDS MySQL with existing systems and applications, ensuring compatibility and interoperability.
 
 ## PROJECT SOLUTION
-- We will start by creating a databse client for demonsttion purposes.
+- We will start by creating a database MySQL client for demonsttion purposes.
 
 ## Creating XYZ RDS Database Client
 1) In the AWS console, select EC2

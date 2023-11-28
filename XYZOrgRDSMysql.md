@@ -23,3 +23,5 @@ They can also be used to enhance availability by promoting a read replica to the
 ##### Amazon RDS Snapshot:
 Purpose: Backup and Recovery: Snapshots are primarily used for creating backups of your DB instance.
 Point-in-Time Restore: They allow you to restore your database to a specific point in time.
+
+

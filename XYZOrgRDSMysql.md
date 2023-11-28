@@ -1,16 +1,4 @@
-### Challenge 10: PROJECT SCOPE
-The project scope encompasses the end-to-end implementation of Amazon RDS (Relational Database Service) with MySQL as the preferred database engine within XYZ Corporation.
-The project scope aims to provide XYZ Corporation with a fully functional, secure, and scalable RDS MySQL database environment, meeting the specified requirements and
-supporting the organization's growth objectives. The scope is subject to periodic review and adjustments based on project progress and emerging organizational needs.
-Success Criteria.
-_The success of the Amazon RDS with MySQL implementation at XYZ Corporation will be measured against the following criteria:_
-##### 1. Database Functionality:
-- The RDS MySQL database is fully functional, meeting the specified requirements and providing reliable data storage and retrieval capabilities.
-##### 2. Data Migration Success:
-- Successful migration of existing data to RDS MySQL with minimal downtime and data integrity maintained throughout the process.
-##### 3. System Integration:
-- Seamless integration of RDS MySQL with existing systems and applications, ensuring compatibility and interoperability.
-
+# RDS Basics
 ## What is RDS?  ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/83e30a38-048b-491e-b333-cac56e7b1c9e) 
 It's a managed database option for MySQL, Maria, PostgreSQL, Microsoft SQL Server, Oracle and MySQL-compatible Aurora. -Best for structured, relational data store needs. -Offers automanted backups and patching in customer-defined maintenance windows.
 A **DB engine** is the specific relational database software that runs on your DB instance.
@@ -35,8 +23,22 @@ Point-in-Time Restore: They allow you to restore your database to a specific poi
 
 ### Building Resiliency in RDS (ability of systems to recover quickly in the face of failure)
 - Create read replica   - Configure proxy   --Manually scale EC2 instance
+
+## CHALLENGE: PROJECT SCOPE
+The project scope encompasses the end-to-end implementation of Amazon RDS (Relational Database Service) with MySQL as the preferred database engine within XYZ Corporation.
+The project scope aims to provide XYZ Corporation with a fully functional, secure, and scalable RDS MySQL database environment, meeting the specified requirements and
+supporting the organization's growth objectives. The scope is subject to periodic review and adjustments based on project progress and emerging organizational needs.
+Success Criteria.
+_The success of the Amazon RDS with MySQL implementation at XYZ Corporation will be measured against the following criteria:_
+##### 1. Database Functionality:
+- The RDS MySQL database is fully functional, meeting the specified requirements and providing reliable data storage and retrieval capabilities.
+##### 2. Data Migration Success:
+- Successful migration of existing data to RDS MySQL with minimal downtime and data integrity maintained throughout the process.
+##### 3. System Integration:
+- Seamless integration of RDS MySQL with existing systems and applications, ensuring compatibility and interoperability.
+
 ## PROJECT SOLUTION
-- We will create a databse client for demonstartion purposes.
+- We will start by creating a databse client for demonsttion purposes.
 
 ## Creating XYZ RDS Database Client
 1) In the AWS console, select EC2
@@ -59,13 +61,15 @@ _
 8) In the credential settings, set the_ Master Username & password_.
 9) In Instance configuration, select _Burstable classes_ (save on cost), Storage leave it at 20Gb.
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/e676284d-4ce4-4ab5-8e17-447a45ade0b9)
-10) Select the Radio button, _Connect to an EC2 compute Resource_.
-11) Under Connectivity, select the EC2 instance created-_xyzdbclient
+
+11) Select the Radio button, _Connect to an EC2 compute Resource_.
+12) Under Connectivity, select the EC2 instance created-_xyzdbclient
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/51b14f4d-ccb4-41cf-9423-446f411d9df3)
--Amazon RDs will automatically add a new vps Security group.
-12) Enable enhanced monitoring
-13) Enable automated backups
-14) Enable encryption
-15) Click Creat DATABASE.
+
+-Amazon RDs will automatically add a new vpc Security group.
+14) Enable enhanced monitoring
+15) Enable automated backups
+16) Enable encryption
+17) Click Creat DATABASE.
 
 

@@ -14,9 +14,9 @@ Purpose: Backup and Recovery: Snapshots are primarily used for creating backups 
 Point-in-Time Restore: They allow you to restore your database to a specific point in time.
 
 #### Instance classes
-1)Standard (m classes,m5)
-2)Memory Optimized (r and x classes, rb5)
-3) Burstable (T class, not suitable for production)
+1)Standard (m classes,m5).
+2)Memory Optimized (r and x classes, rb5).
+3) Burstable (T class, not suitable for production).
 
 ### RDS Proxy -manages connections to the databases more efficiently.
 -- Acts as an intermediary between the application and the RDS.
@@ -67,9 +67,9 @@ _
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/51b14f4d-ccb4-41cf-9423-446f411d9df3)
 
 -Amazon RDs will automatically add a new vpc Security group.
-14) Enable enhanced monitoring
-15) Enable automated backups
-16) Enable encryption
+14) Enable enhanced monitoring.
+15) Enable automated backups.
+16) Enable encryption.
 17) Click Creat DATABASE.
 
 

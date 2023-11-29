@@ -56,13 +56,13 @@ _
   ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/7c985e14-d879-4ad5-8188-4c2f4e102492)
 
 5) Scroll down to the _Engine Version_ select: 8.0.32. 
-6) In the Templates section, select Dev/Test or Production for Multi-AZ. Otherwise Free tier if you want to save cost, this is Single AZ (Can still add additional read-only instances once the primary is up and running.)
+6) In the Templates section, select Dev/Test or Production for Multi-AZ. Otherwise _Free tier_ if you want to save cost, this is Single AZ (Can still add additional read-only instances once the primary is up and running.)
 7) Set the DB instance identifier to _primary-instance_
-8) In the credential settings, set the_ Master Username & password_.
+8) In the credential settings, set the_ Master Username & password_. Note it down, will be used to login to the db later on.
 9) In Instance configuration, select _Burstable classes_ (save on cost), Storage leave it at 20Gb.
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/e676284d-4ce4-4ab5-8e17-447a45ade0b9)
 
-11) Select the Radio button, _Connect to an EC2 compute Resource_.
+11) Select the Radio button, _Connect to an EC2 compute Resource_. Since we already created an EC2 instance 
 12) Under Connectivity, select the EC2 instance created-_xyzdbclient
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/51b14f4d-ccb4-41cf-9423-446f411d9df3)
 
@@ -73,3 +73,35 @@ _
 17) Click Creat DATABASE.
 
 
+### Connect using mysql client
+1)	Click the EC2 Instance Connect button.
+2)	Wait for the connection to the EC2 instance to be established.
+3)	Run the command: _sudo yum update -y_ (updates the instance package)
+4)	Run the command: install the mysql client: _sudo yum install mysql	_
+- Wait for the installer report to complete
+5) Open the RDS client console. Click on the new database instance to open its details.
+6) Under the **Connectivity & security tab**, copy the value for _Endpoint_.
+- Endpoint will be used to connect to the RDS
+7) Head over to the EC2 console, run the command below and include the endpoint copied in (6)
+_mysql -h <RDS Endpoint Value> -P 3306 -u admin -p	mysql_ 
+Enter the password you used to create the DB
+8) Run the commands below to see the available databases on the instances:
+_show databases;__
+__use mysql;_
+_show tables;_
+_select * from user;_
+
+_**In case a Free Tier was used in creating the DB, that means it's in Single AZ. _
+_We'll therefore need to create a Read replica for higher availability.**_
+
+### Adding a Read Replica
+1) Switch to the RDS console page.
+2) Find the db you created *primary-instance databases 
+3) Select the Primary DB, click the button labeled Actions, and then from the drop-down menu, select Create read replica.
+4) Scroll down to the Network & Security section.
+5) Click the drop-down and select an AZ other than where the primary instance is located
+6) Ensure the Read replica source is primary-instance.
+7) Set the DB instance identifier to readonly-instance (now identified as readonly-instance)
+8) Click Create read replica.	
+9) To see the Readonly instance in the console session running mysql....run the command:
+__show slave hosts;_ (A table is printed showing the RO instance)

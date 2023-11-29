@@ -56,7 +56,7 @@ _
   ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/7c985e14-d879-4ad5-8188-4c2f4e102492)
 
 5) Scroll down to the _Engine Version_ select: 8.0.32. 
-6) Select Free tier in the Templates section. This is to keep our cost as low as possible. However, we will add additional read-only instances once the primary is up and running.
+6) In the Templates section, select Dev/Test or Production for Multi-AZ. Otherwise Free tier if you want to save cost, this is Single AZ (Can still add additional read-only instances once the primary is up and running.)
 7) Set the DB instance identifier to _primary-instance_
 8) In the credential settings, set the_ Master Username & password_.
 9) In Instance configuration, select _Burstable classes_ (save on cost), Storage leave it at 20Gb.

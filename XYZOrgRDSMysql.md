@@ -64,13 +64,13 @@ _
 
 10) Select the Radio button, _Connect to an EC2 compute Resource_. Since we already created an EC2 instance 
 11) Under Connectivity, select the EC2 instance created-_xyzdbclient
+12) Amazon RDs will automatically add a new vpc Security group.
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/51b14f4d-ccb4-41cf-9423-446f411d9df3)
 
--Amazon RDs will automatically add a new vpc Security group.
-12) Enable enhanced monitoring.
-13) Enable automated backups.
-14) Enable encryption.
-15) Click Create DATABASE.
+13) Enable enhanced monitoring.
+14) Enable automated backups.
+15) Enable encryption.
+16) Click Create DATABASE.
 
 
 ### Connect using mysql client

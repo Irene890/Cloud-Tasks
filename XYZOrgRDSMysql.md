@@ -14,8 +14,8 @@ Purpose: Backup and Recovery: Snapshots are primarily used for creating backups 
 Point-in-Time Restore: They allow you to restore your database to a specific point in time.
 
 #### Instance classes
-1)Standard (m classes,m5).
-2)Memory Optimized (r and x classes, rb5).
+1) Standard (m classes,m5).
+2) Memory Optimized (r and x classes, rb5).
 3) Burstable (T class, not suitable for production).
 
 ### RDS Proxy -manages connections to the databases more efficiently.

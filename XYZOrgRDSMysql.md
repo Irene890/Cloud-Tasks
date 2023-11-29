@@ -62,15 +62,15 @@ _
 9) In Instance configuration, select _Burstable classes_ (save on cost), Storage leave it at 20Gb.
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/e676284d-4ce4-4ab5-8e17-447a45ade0b9)
 
-11) Select the Radio button, _Connect to an EC2 compute Resource_. Since we already created an EC2 instance 
-12) Under Connectivity, select the EC2 instance created-_xyzdbclient
+10) Select the Radio button, _Connect to an EC2 compute Resource_. Since we already created an EC2 instance 
+11) Under Connectivity, select the EC2 instance created-_xyzdbclient
 ![image](https://github.com/Irene890/Cloud-Tasks/assets/133228414/51b14f4d-ccb4-41cf-9423-446f411d9df3)
 
 -Amazon RDs will automatically add a new vpc Security group.
-14) Enable enhanced monitoring.
-15) Enable automated backups.
-16) Enable encryption.
-17) Click Creat DATABASE.
+12) Enable enhanced monitoring.
+13) Enable automated backups.
+14) Enable encryption.
+15) Click Create DATABASE.
 
 
 ### Connect using mysql client

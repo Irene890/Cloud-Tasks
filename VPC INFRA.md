@@ -16,11 +16,15 @@ Assigns a friendly Domain Name System (DNS) name to Amazon EC2 instances in the 
 4. Created an internet gateway and attach it to the VPC. Then added a route to the public subent that directs internet-bound traffic to the IGW. Also associated the public subnet with the route table.
 ![igw route](https://github.com/Irene890/Images/blob/main/igw.png)
 
-5. Created a public SG to allow http traffic - Users can access teh EC2 instances. 
-6. Launched an Amazon Elastic Compute Cloud (Amazon EC2) instance and made the instance publicly accessible.
+5. Created a public SG to allow http traffic - Users can access the EC2 instances. 
+6. Launched Amazon EC2 instance and made the instance publicly accessible.
    - Selected role EC2InstProfile - since we'll log in using SSM
    - Provided the user data to install and configure the instance as a Web server
-Isolate an Amazon EC2 instance in a private subnet.
-Create and assign security groups to Amazon EC2 instances.
-Connect to Amazon EC2 instances using Session Manager, a capability of AWS Systems Manager.
+7. Created a **NAT gateway** and then created a Private route table to route non-local traffic to the NAT gateway.
+   - Specified the Elastic IP
+   - Associate the private route table with the private subnet.
+   - Below route sends internet-bound traffic from the private subnet to the NAT gateway that is in the same AZ.
+     ![Nat gw](https://github.com/Irene890/Images/blob/main/natgw.png)
+7. Launched EC2 instance into a private subnet selected the private subnet group.
+   -Connected to EC2 instances using Session Manager.
 

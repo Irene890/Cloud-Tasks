@@ -9,6 +9,14 @@ Architects must prioritize high availability and fault tolerance in their system
 4. *Auto Scaling Group* allows you to automatically adjust the number of instances in reponse to changes in demand. Ensure cost efficieny, scales down idle instances and scales out instances when needed. 
 HA comes when ASG replaces failed instances with new inatnces. It uses *Configuration Template* where the instances specification like AMIs, user data are defined.
 5. For apps that require session state, *ELB* maintains session affinity, ensuring that requests from a specific client are consistently routed to the same instance.
-6. *Amazon RDS Multi-AZ* ensures the database is deployed across multiple AZs, maintans continuous replication.
-7. *RDS Failover Mechanism*: In case of a primary instance failure, RDS automatically fails over to the standby instance, minimizing downtime.
+6. *NAT GW* allows instances in a private subnet to connect to the internet while preventing the internet from initiating connections with those instances.
+7. *Amazon RDS Multi-AZ* ensures the database is deployed across multiple AZs, maintans continuous replication.
+8. *RDS Failover Mechanism*: In case of a primary instance failure, RDS automatically fails over to the standby instance, minimizing downtime.
+
+
+Created a launch template that'll be used by ASG
+Created an EC2 ASG and registered it with the Application Load Balancer spanning across Multiple AZs.
+Created a highly available Aurora DB cluster
+Modified the VPC config to be highly available by using redundant NAT gateways.
+Created Aurora read replica in different region.
 

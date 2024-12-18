@@ -11,10 +11,14 @@ Event-driven architectures are adopted to decouple distributed applications.
 
 ### Solution
 Using Amazon Simple Notification Service (Amazon SNS) topics and Amazon Simple Queue Service (Amazon SQS) queues, we address cases that require end-to-end message ordering, deduplication, filtering, and encryption.
-In this scenario an Amazon Simple Storage Service (Amazon S3) bucket is configured to invoke an Amazon SNS notification whenever an object is added to an S3 bucket. Amazon SNS then distributes the notifications to 2 SQS queues.
-We create AWS Lambda functions using preexisting code. The AWS Lambda function is invoked using Amazon SQS. The Lambda functions process the images into formats and stores the output in S3 bucket folder.
-This scenario helps one to understand how to architect an application to respond to Amazon S3 bucket events using serverless services such as Amazon SNS, AWS Lambda, and Amazon SQS.
-Validation  of the processed images in the S3 bucket folders and the logs in Amazon CloudWatch.
+In this scenario an Amazon Simple Storage Service (Amazon S3) bucket is configured to invoke an Amazon SNS notification whenever an object is added to an S3 bucket. 
+Created an SNS topic
+Created 2 Amazon SQS queues each for a specific purpose and then subscribed the queues to the created Amazon SNS topic.
+Amazon SNS then distributes the notifications to the 2 SQS queues.
+Configured the Amazon SNS access policy (Preexisting) to allow the Amazon S3 bucket to publish to a topic.
+Created a single S3 event notification on uploads to the ingest S3 bucket.
+Created AWS Lambda functions using preexisting code. The AWS Lambda function is invoked using Amazon SQS. Added the SQS triggers. 
+The Lambda functions process the images into formats and stores the output in S3 bucket folder.
 
 ![Image](https://github.com/Irene890/Images/blob/main/Serveless.design.png)
 

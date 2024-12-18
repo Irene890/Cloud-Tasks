@@ -16,5 +16,5 @@ We create AWS Lambda functions using preexisting code. The AWS Lambda function i
 This scenario helps one to understand how to architect an application to respond to Amazon S3 bucket events using serverless services such as Amazon SNS, AWS Lambda, and Amazon SQS.
 Validation  of the processed images in the S3 bucket folders and the logs in Amazon CloudWatch.
 
-![Image]()
+![Image](https://github.com/Irene890/Images/blob/main/Serveless.design.png)
 

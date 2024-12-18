@@ -20,5 +20,9 @@ Created a single S3 event notification on uploads to the ingest S3 bucket.
 Created AWS Lambda functions using preexisting code. The AWS Lambda function is invoked using Amazon SQS. Added the SQS triggers. 
 The Lambda functions process the images into formats and stores the output in S3 bucket folder.
 
+**Workflow**
 ![Image](https://github.com/Irene890/Images/blob/main/Serveless.design.png)
+
+**Resized images**
+![Image](https://github.com/Irene890/Images/blob/main/s3validator.png).
 

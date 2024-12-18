@@ -15,3 +15,6 @@ In this scenario an Amazon Simple Storage Service (Amazon S3) bucket is configur
 We create AWS Lambda functions using preexisting code. The AWS Lambda function is invoked using Amazon SQS. The Lambda functions process the images into formats and stores the output in S3 bucket folder.
 This scenario helps one to understand how to architect an application to respond to Amazon S3 bucket events using serverless services such as Amazon SNS, AWS Lambda, and Amazon SQS.
 Validation  of the processed images in the S3 bucket folders and the logs in Amazon CloudWatch.
+
+![Image]()
+

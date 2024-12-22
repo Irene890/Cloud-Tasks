@@ -15,4 +15,10 @@ How VPC Peering Works:
 
 ![peering](https://github.com/Irene890/Images/blob/main/peering.png)
 
+Amazon Route 53 private hosted zones allow you to declare how traffic will be routed for domains and subdomains within VPCs using DNS records. This gives you the convenience of using custom domain names to access resources instead of IPv4 addresses or Amazon provided private DNS hostnames. It also gives you the flexibility of reassigning hostnames to different resources.
+
+Private hosted zones can be associated with one or more VPCs. Each VPC must be configured with the following settings enabled:
+
+DNS hostnames
+DNS resolution
 

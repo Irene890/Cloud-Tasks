@@ -14,6 +14,7 @@ b) From a Gateway Loadbalancer endpoint to a subnet
 c) Between subnets
 We'll use the Middlebox wizard to route incoming public internet traffic through a middlebox before the traffic is routed to web servers in public subnets
 
-![routemiddle](https://github.com/Irene890/Images/blob/main/Routemiddle.png)
+![routemiddle](https://github.com/Irene890/Images/blob/main/Routemiddle2.png)
 
 A remote instance exists in its own VPC. This instance makes web requests to the web servers in the other VPC. The web servers have public IP addresses. The remote instance is used to test web server connectivity and could represent any network device on the public internet.
+Incoming traffic for the web servers coming from the internet gateway will be routed through the middleboxes before reaching their destination subnets hosting the web servers.

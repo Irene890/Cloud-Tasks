@@ -14,3 +14,4 @@ b) From a Gateway Loadbalancer endpoint to a subnet
 c) Between subnets
 We'll use the Middlebox wizard to route incoming public internet traffic through a middlebox before the traffic is routed to web servers in public subnets
 
+![routemiddle](https://github.com/Irene890/Images/blob/main/Routemiddle.png)

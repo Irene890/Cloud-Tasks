@@ -1,3 +1,1 @@
-In this video, we provide an overview of the VPC Flow Logs architecture for CloudWatch and S3 integrations. 
-We also discuss how CloudWatch alerts and AWS Simple Notification Service (SNS) work together to automatically send notifications based on CloudWatch metrics. 
-Finally, we discuss how AWS Athena and S3 work together to provide a cost-efficient solution for long-term log storage.
+

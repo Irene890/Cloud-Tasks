@@ -1,4 +1,5 @@
-*VPC*- Virtual Private Cloud allows hosting of your own cloud infrastructure in the public cloud/ provides logical isolated section in public cloud where you can host your virtual network environment.
+*VPC*- Virtual Private Cloud allows hosting of your own cloud infrastructure in the public cloud/ isolated segment of the AWS public cloud that allows you to provision your cloud resources. 
+Only allowed 5 VPCs per Region/per AWS Account.
 
 This VPC allows some services direct outbound access to the public internet and some services that don't.
 Questions?

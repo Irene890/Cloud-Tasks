@@ -15,3 +15,37 @@ The VPC peering can be established between VPCs in different Regions(**inter-Reg
 2. Route tables for every VPC must be configured to route traffic to the peered VPC.
 3. VPC peering can't be established with VPC with overlapping CIDR blocks
 4. Security groups must be configured to allow the traffic needed between the peered VPCs.
+
+1
+Enable Flow Logs
+Create flow logs on the VPCs named web-vpc and api-vpc that satisfy the following:
+
+Capture all traffic
+Send the logs to Amazon CloudWatch Logs
+Logs go to a log group named flow-logs-group
+Uses the IAM role named flow-log-role
+Note: The flow logs can be named anything
+2
+Create a Private Hosted Zone
+Create a private Route53 hosted zone that satisfies the following:
+
+Named lab.private
+In the US West (Oregon) region
+In the web-vpc VPC
+
+3
+
+Create a Peering Connection
+Create a peering connection between the api-vpc and web-vpc VPCs that satisfies the following:
+
+Named api-web-pc
+The api-vpc is the requester
+The web-vpc is the accepter
+The VPC peering request is accepted
+4
+Update Route Tables
+Modify the route tables of the api-vpc and web-vpc so that:
+
+The route table named web-vpc-rtb has a route for the 10.1.0.0/16 subnet
+The route table named api-vpc-rtb has a route for the 10.0.0.0/16 subnet
+Both routes use your peering connection as the Target

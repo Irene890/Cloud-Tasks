@@ -1,4 +1,5 @@
-*VPC*- Virtual Private Cloud allows hosting of your own cloud infrastructure in the public cloud/ isolated segment of the AWS public cloud that allows you to provision your cloud resources. 
+## VPC Implementation
+**VPC**- Virtual Private Cloud is an isolated segment of the AWS public cloud that allows you to provision your cloud resources. 
 Only allowed 5 VPCs per Region/per AWS Account.
 
 This VPC allows some services direct outbound access to the public internet and some services that don't.
@@ -7,42 +8,21 @@ Subnetting?
 HA subnets?
 
 1. Created new VPC with CIDR block 10.0.0.0/16
-2. Create Public Subnets for Highly Available Hosts
-Create subnets that satisfy the following:
-
-Are capable of hosting infrastructure that can directly access the public internet
-Are capable of hosting highly available infrastructure
-Have the word public in the subnet name tag
-3. 
-Create Route Tables for your Public Subnets
+2. Created 2 Public Subnets for Highly Available Hosts
+   **Subnet**- range of IP addresses. Subent resides within a **single AZ**.
+   - One can add resources after adding the subnets.
+4. Created Route Tables for the Public Subnets
+   **Route Tables** determines where traffic in the subnet is directed to
 Create route tables for each of your public subnets that satisfy the following:
 
-The name of each route table contains the word public
-Local VPC traffic is addressable
-Traffic not addressable within the VPC is routed to the public internet
-4.
-Create Private Subnets for Highly Available Hosts
-Create private subnets that satisfy the following:
+5. Created Private Subnets for Highly Available Hosts
+Reosurces in the private subnet are not capable of routing traffic to the public internet 
 
-Are capable of hosting highly available infrastructure
-Are not capable of routing traffic to the public internet 
-Have separate route tables per availability zone
-Have the word private in the subnet name tag 
-5.
-Create a Public Security Group
-Create a security group that satisfies the following:
-
-Contains the word public in the group's name
-Has a rule that allows inbound HTTPS traffic from all sources
-6.
-
-Create a Private Security Group
-Create a security group that satisfies the following:
-
-Contains the word private in the group's name
-Has a rule that allows inbound HTTP traffic from the public security group
-7
-Create Flow Logs for Public and Private Subnets
-Create flow logs that log all traffic in your subnets to the CloudWatch Logs log group named Challenge-Flow-Logs
+6. Created a Public Security Group
+Created a rule that allows inbound HTTPS traffic from all sources
+7. Created a Private Security Group
+Created a rule that allows inbound HTTP traffic from the public security group
+8. Created Flow Logs for Public and Private Subnets
+**Flow logs** - log all traffic in the subnets to the CloudWatch Logs log group named Challenge-Flow-Logs
 
 Note: Use the IAM role named challenge-vpc-flow-logs-role to publish logs to the log group

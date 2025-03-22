@@ -9,7 +9,7 @@ VPC peering provides full mesh architecture.
 2. Easy connectivity - Resource sharing between the VPCs
 3. Flexibility -> VPC peering in different regions, different AWs acoounts etc
 4. Enhanced security-> Traffic is within the AWs network
-5. Reduced netwrok latency -> Traffic is not routed over the ibternet 
+5. Reduced netwrok latency -> Traffic is not routed over the internet 
 
 **Points to note:**
 1. VPC peering is **non-transitive**- All peering connections need to be established
@@ -17,36 +17,37 @@ VPC peering provides full mesh architecture.
 3. VPC peering can't be established with VPC with overlapping CIDR blocks
 4. Security groups must be configured to allow the traffic needed between the peered VPCs.
 
-1
-Enable Flow Logs
-Create flow logs on the VPCs named web-vpc and api-vpc that satisfy the following:
 
-Capture all traffic
-Send the logs to Amazon CloudWatch Logs
-Logs go to a log group named flow-logs-group
-Uses the IAM role named flow-log-role
-Note: The flow logs can be named anything
-2
-Create a Private Hosted Zone
-Create a private Route53 hosted zone that satisfies the following:
+# Infrastructure have been configured as below:
 
-Named lab.private
-In the US West (Oregon) region
-In the web-vpc VPC
+- Two VPCs named web-vpc and api-vpc have been deployed
+- Autoscaling groups exist in both VPCs and are configured to launch servers
+- Load balancers have been deployed in each VPC
+- The web application has been modified to access the API through the domain name **api.elb.lab.private**
 
-3
+## Tasks to complete:
+1. Enabling flow logs on both VPCs to make debugging connectivity issues easier
+2. Creating an Amazon Route53 private hosted zone in the Web VPC
+3. Creating a record in the private hosted zone for the API load balancer
+4. Creating a peering connection between the VPCs
+5. Updating the route tables of the VPCs to enable routing between them
 
-Create a Peering Connection
-Create a peering connection between the api-vpc and web-vpc VPCs that satisfies the following:
+api-vpc cidr: 10.1.0.0/16
+web vpc cidr: 10.0.0.0/16
+API Load Balancer: api-elb
+Web Load Balancer: web-elb
 
-Named api-web-pc
-The api-vpc is the requester
-The web-vpc is the accepter
-The VPC peering request is accepted
-4
-Update Route Tables
-Modify the route tables of the api-vpc and web-vpc so that:
+1. Enabled Flow Logs
+Created 2 flow logs on the VPCs named web-vpc and api-vpc.
+These VPC Flow logs: Capture all traffic, Sent the logs to Amazon CloudWatch Logs, Logs go to a log group named flow-logs-group, Uses the IAM role named flow-log-role
 
-The route table named web-vpc-rtb has a route for the 10.1.0.0/16 subnet
-The route table named api-vpc-rtb has a route for the 10.0.0.0/16 subnet
-Both routes use your peering connection as the Target
+2. Created a Private Hosted Zone
+- Private Route53 hosted zone is a feature that helps one to manage the internal DNS records [Translates domain names to IP addresses, DNS quesries originates from the selected VPC only,
+- Associated it with Web-vpc in US West (Oregon) region
+
+4. Created a Peering Connection between the api-vpc and web-vpc VPCs that satisfied the following:
+- Named api-web-pc
+- The api-vpc is the requester
+- The web-vpc is the accepter
+- The VPC peering request is accepted
+4. Updated Route Tables to include the peering routes for both

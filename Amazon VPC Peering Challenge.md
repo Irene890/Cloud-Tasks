@@ -24,6 +24,7 @@ VPC peering provides full mesh architecture.
 - Autoscaling groups exist in both VPCs and are configured to launch servers
 - Load balancers have been deployed in each VPC
 - The web application has been modified to access the API through the domain name **api.elb.lab.private**
+![VPC peering architecture](https://github.com/Irene890/Images/blob/main/VPC%20Peering%20Archi.png)
 
 ## Tasks to complete:
 1. Enabling flow logs on both VPCs to make debugging connectivity issues easier

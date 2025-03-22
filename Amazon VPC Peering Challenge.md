@@ -33,10 +33,10 @@ VPC peering provides full mesh architecture.
 4. Creating a peering connection between the VPCs
 5. Updating the route tables of the VPCs to enable routing between them
 
-*api-vpc cidr: 10.1.0.0/16
-*web vpc cidr: 10.0.0.0/16
-*API Load Balancer: api-elb
-*Web Load Balancer: web-elb
+- api-vpc cidr: 10.1.0.0/16
+- web vpc cidr: 10.0.0.0/16
+- API Load Balancer: api-elb
+- Web Load Balancer: web-elb
 
 Steps Taken:
 1. Enabled Flow Logs
@@ -48,8 +48,8 @@ These VPC Flow logs: Capture all traffic, Sent the logs to Amazon CloudWatch Log
 2. Created a Private Hosted Zone
 - Private Route53 hosted zone is a feature that helps one to manage the internal DNS records [Translates domain names to IP addresses, DNS quesries originates from the selected VPC only,
 - Associated it with Web-vpc in US West (Oregon) region.
-- ![Private hosted zone](https://github.com/Irene890/Images/blob/main/Route%2053%20private%20hosted%20zone.png)
-- Created a cName record that uses the DNS name of the load balancer named api-elb in the API VPC for the record's value, uses the Simple routing policy and has a TTL of 300 seconds.
+![Private hosted zone](https://github.com/Irene890/Images/blob/main/Route%2053%20private%20hosted%20zone.png)
+- Created a cName record that uses the DNS name of the load balancer named api-elb in the API VPC for the record's value, uses the Simple routing policy and has a TTL of 300 seconds
 ![Cname record](https://github.com/Irene890/Images/blob/main/CNAME%20record.png)
 
 3. Created a Peering Connection between the api-vpc and web-vpc VPCs that satisfied the following:

@@ -41,13 +41,23 @@ Web Load Balancer: web-elb
 1. Enabled Flow Logs
 Created 2 flow logs on the VPCs named web-vpc and api-vpc.
 These VPC Flow logs: Capture all traffic, Sent the logs to Amazon CloudWatch Logs, Logs go to a log group named flow-logs-group, Uses the IAM role named flow-log-role
+![API Flow log](https://github.com/Irene890/Images/blob/main/api-flow-log.png)
 
-2. Created a Private Hosted Zone
+![Web Flow log](https://github.com/Irene890/Images/blob/main/web-flow-log.png)
+3. Created a Private Hosted Zone
 - Private Route53 hosted zone is a feature that helps one to manage the internal DNS records [Translates domain names to IP addresses, DNS quesries originates from the selected VPC only,
-- Associated it with Web-vpc in US West (Oregon) region
+- Associated it with Web-vpc in US West (Oregon) region.
+- ![Private hosted zone](https://github.com/Irene890/Images/blob/main/Route%2053%20private%20hosted%20zone.png)
 - Created a cName record that uses the DNS name of the load balancer named api-elb in the API VPC for the record's value, uses the Simple routing policy and has a TTL of 300 seconds.
+![Cname record](https://github.com/Irene890/Images/blob/main/CNAME%20record.png)
 
 4. Created a Peering Connection between the api-vpc and web-vpc VPCs that satisfied the following:
 - The api-vpc as the requester
 - The web-vpc as the accepter
+  
 4. Updated Route Tables to include the peering routes for both
+**API Route added in the Web Route table**
+![API route addition](https://github.com/Irene890/Images/blob/main/web%20route%20added%20api%20route.png)
+**Web Route added in the API Route table**
+![Web route addition ](https://github.com/Irene890/Images/blob/main/api%20route%20added%20web%20route.png)
+

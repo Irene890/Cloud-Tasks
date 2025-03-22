@@ -44,10 +44,9 @@ These VPC Flow logs: Capture all traffic, Sent the logs to Amazon CloudWatch Log
 2. Created a Private Hosted Zone
 - Private Route53 hosted zone is a feature that helps one to manage the internal DNS records [Translates domain names to IP addresses, DNS quesries originates from the selected VPC only,
 - Associated it with Web-vpc in US West (Oregon) region
+- Created a cName record that uses the DNS name of the load balancer named api-elb in the API VPC for the record's value, uses the Simple routing policy and has a TTL of 300 seconds.
 
 4. Created a Peering Connection between the api-vpc and web-vpc VPCs that satisfied the following:
-- Named api-web-pc
-- The api-vpc is the requester
-- The web-vpc is the accepter
-- The VPC peering request is accepted
+- The api-vpc as the requester
+- The web-vpc as the accepter
 4. Updated Route Tables to include the peering routes for both

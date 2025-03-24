@@ -3,7 +3,7 @@ Networking connection **between 2 VPCs that enables one to route traffic between
 Instances in either VPC can communicate with each other as if they are within the same network. 
 The VPC peering can be established between VPCs in different Regions(**inter-Region**),VPCs can be in the same AWS account and in different AWS accounts.
 VPC peering provides full mesh architecture.
-
+-
 **Benefits**
 1. Private communication- Traffic is not routed over the internet
 2. Easy connectivity - Resource sharing between the VPCs

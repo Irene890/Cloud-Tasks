@@ -1,9 +1,11 @@
 ## Virtual Private Cloud (VPC) peering
 Networking connection **between 2 VPCs that enables one to route traffic between them using private IP addresses**.
-Instances in either VPC can communicate with each other as if they are within the same network. 
-The VPC peering can be established between VPCs in different Regions(**inter-Region**),VPCs can be in the same AWS account and in different AWS accounts.
-VPC peering provides full mesh architecture.
--
+- Instances in either VPC can communicate with each other as if they are within the same network. 
+- The VPC peering can be established between VPCs in different Regions(**inter-Region**),VPCs can be in the same AWS account and in different AWS accounts.
+- VPC peering provides full mesh architecture.
+- **Routing in VPC Peering:** Subnets in both VPCs must include a route to subnets in the peered VPC using the pcx.
+- VPC peering doesn't support unicast reverse path forwarding (Checking source IP of packets and routes packet back to the correct source)
+
 **Benefits**
 1. Private communication- Traffic is not routed over the internet
 2. Easy connectivity - Resource sharing between the VPCs
@@ -16,7 +18,6 @@ VPC peering provides full mesh architecture.
 2. Route tables for every VPC must be configured to route traffic to the peered VPC.
 3. VPC peering can't be established with VPC with overlapping CIDR blocks
 4. Security groups must be configured to allow the traffic needed between the peered VPCs.
-
 
 # Infrastructure has been configured as below:
 

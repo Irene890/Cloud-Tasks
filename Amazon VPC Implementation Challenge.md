@@ -2,7 +2,7 @@
 **VPC**- Virtual Private Cloud is an isolated segment of the AWS public cloud that allows you to provision your cloud resources. 
 Only allows **5** VPCs per Region/per AWS Account.
 
-**Subnetting**: Process of splitting a CIDR block into smaller CIDR blocks
+**Subnetting**: Process of splitting a CIDR block into smaller CIDR blocks.
 Maximum CIDR block: /16
 Minimum CIDR block: /28
 *AWS reserves 5 host addresses: 1) VPC router 2)AWS DNS 3)Future Use 

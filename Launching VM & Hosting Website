@@ -2,16 +2,14 @@
 - Instance should be launched with most recent patches
 
 1) Name & Tags
-Label you can assign to an AWS resource
-Consists of Key and Value
-Benefits: Filtering, cost allocation
+- Label you can assign to an AWS resource
+- Consists of Key and Value
+- Benefits: Filtering, cost allocation
 
 2) Choose an AMI
-- Template that consists of O/S (Windows/Linux),
-Applications, Launch permissions
---Choose an AMI according to the use of your instance
-is it a web server? Application server?
---You can't change an AMI after creation
+- Template that consists of O/S (Linux), Applications, Launch permissions
+- Choose an AMI according to the use of the instance. is it a web server? Application server?
+- You can't change an AMI after creation
 
 3) Instance Type
 Specifies the hardware used. i.e) CPU, RAM(memory),

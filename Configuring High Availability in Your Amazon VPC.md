@@ -15,7 +15,7 @@ HA comes when ASG replaces failed instances with new inatnces. It uses *Configur
 
 ![HAFT](https://github.com/Irene890/Images/blob/main/HA%20FT%20vpc.png)
 
-Created a launch template that'll be used by ASG to launch EC2 instances depending with traffic
+- Created a launch template that'll be used by ASG to launch EC2 instances depending with traffic
 Created an EC2 ASG and registered it with the Application Load Balancer spanning 2 AZs-- it is designed to launch or terminate EC2 instances in private instances automatically based on user-defined policies, schedules, and health checks. This is a security best practice when deploying applications because instances in a private subnet cannot be accessed from the internet. Auto Scaling is a service designed to launch or terminate EC2 instances automatically based on user-defined policies, schedules, and health checks. Configured desired, minimum and maximum capacity to 2 each. This maintains the application’s availability and makes it resilient to instance or Availability Zone failures.
 Created a highly available Aurora DB cluster
 Modified the VPC config to be highly available by using redundant NAT gateways.

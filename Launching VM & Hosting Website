@@ -1,5 +1,6 @@
-- Instance should have a Linux OS
-- Instance should be launched with most recent patches
+# Launching VM & Hosting Website
+- Instance has a Linux OS
+- Instance launched with most recent patches
 
 1) Name & Tags
 - Label you can assign to an AWS resource
@@ -8,14 +9,11 @@
 
 2) Choose an AMI
 - Template that consists of O/S (Linux), Applications, Launch permissions
-- Choose an AMI according to the use of the instance. is it a web server? Application server?
+- Choose an AMI according to the use of the instance. is it a web server?
 - You can't change an AMI after creation
 
 3) Instance Type
-Specifies the hardware used. i.e) CPU, RAM(memory),
-disk space, Network performance
---Instances types for light, heavy & extreme workloads
--- Higher generation more powerful
+- Specifies the hardware used. i.e) CPU, RAM(memory), disk space, Network performance
 
 Instance categories: 
 a) General- t2, t3
@@ -24,11 +22,10 @@ c) Memory optimized (R4, R5)
 --can be changed after launcing the instance
 --Option of vertical scaling (Scale up or down for CPU)
 
-4) Key pair - Security credentials you used toprove your identity when connecvting to the AWs resource
-Consists of Public key that AWS stores
-Private key that you store
--Can't be added after launch
-windows -RDP
+4) Key pair - Security credentials you used to prove your identity when connecting to the AWs resource
+- Consists of Public key that AWS stores.
+- Private key that you store
+- Can't be added after launch
 Linux instance- SSH
 
 5)Network Settings
@@ -36,38 +33,26 @@ Linux instance- SSH
 - Subnet
 - Security Group to place your instance
 
-REGION- assumed using the management console your working on
-
 6) Security Group (stateful)--instance level
-- Virtual firewall for your instances
+- Virtual firewall for the instances
 - Specifies allow rules but not deny rules
 
 Use the VM to host your website.
 in terminal:
 
-sudo su -> Root admin
-
-yum update -y
-
-yum install -y httpd ->instal Apache service- downloads all packages- web server
-
-systemctl status httpd (Shows inactive)- show https status
-systemctl enable httpd enable httpd
-system start httpd  httpd server is now up and website accessible 
-
-mkdir temp --> Create Directory --Template
-
-wget ziplinkfreefile -->((Download website)To access free websites) (https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip)
-ls (oxer.zip)
-
-unzip oxer.zip (unzip file)
-
-cd oxer-html (See all styling)
-
-Convert server into web server
-
-mv * /var/www/html/  Convert server into web server
-
-cd /var/www/html/
-Use public IP to access website
+a) sudo su -> Root admin
+b) yum update -y
+c) yum install -y httpd ->instal Apache service- downloads all packages- web server
+d) systemctl status httpd (Shows inactive)- show https status
+e) systemctl enable httpd enable httpd
+f) system start httpd  httpd server is now up and website accessible 
+g) mkdir temp --> Create Directory --Template
+h) wget ziplinkfreefile -->((Download website)To access free websites) (https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip)
+- ls (oxer.zip)
+i) unzip oxer.zip (unzip file)
+j) cd oxer-html (See all styling)
+k) Convert server into web server
+l) mv * /var/www/html/  Convert server into web server
+m) cd /var/www/html/
+n) Use public IP to access website
 

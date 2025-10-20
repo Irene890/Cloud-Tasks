@@ -28,7 +28,7 @@ c) Memory optimized (R4, R5)
 - Can't be added after launch
 Linux instance- SSH
 
-5)Network Settings
+5)Configured the Network Settings
 - VPC
 - Subnet
 - Security Group to place the instance

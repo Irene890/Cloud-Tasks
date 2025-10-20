@@ -39,22 +39,22 @@ Linux instance- SSH
 
 ### Use the VM to host the website.
 **Use EC2 Instance connect to connect to the EC2 instance:**
-a) sudo su -> Root admin
-b) yum update -y --> Update the system
-c) yum install -y httpd ->instal Apache service- downloads all packages- web server
-d) systemctl status httpd - show https status
-e) mkdir temp --> Create Directory
-f) cd temp/
-g) Copy the link of the free website and use it the wget command below
-h) wget https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip -->((Download website)To access free websites)
-i) Website will be copied in the temp/ directory
+- sudo su -> Root admin
+-  yum update -y --> Update the system
+- yum install -y httpd ->instal Apache service- downloads all packages- web server
+- systemctl status httpd - show https status
+- mkdir temp --> Create Directory
+- cd temp/
+- Copy the link of the free website and use it the wget command below
+- wget https://www.free-css.com/assets/files/free-css-templates/download/page296/oxer.zip -->((Download website)To access free websites)
+- Website will be copied in the temp/ directory
 - ls -lrt (oxer.zip)
-j) unzip oxer.zip (unzip file)
-k) cd oxer directory
-l) mv * /var/www/html/ -  Convert server into web server
-m) cd /var/www/html/
-ls -lrt
-n) Check SG, enable http/https port 80/443
-o) Use public IP to access website
-p) systemctl enable httpd - enable httpd
-p) system start httpd - httpd server is now up and website accessible 
+- unzip oxer.zip (unzip file)
+- cd oxer directory
+- mv * /var/www/html/ -  Convert server into web server
+- cd /var/www/html/
+- ls -lrt
+- Check SG, enable http/https port 80/443
+- Use public IP to access website
+- systemctl enable httpd - enable httpd
+- system start httpd - httpd server is now up and website accessible 
